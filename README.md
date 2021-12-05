@@ -93,5 +93,5 @@ Sleeper.notify("B")
 Sleeper.notify("A")
 ```
 
-Now ever time `Sleeper::wait(name: String)` is invoked, we can create a new istance of a `Lock`, store it into a hashmap, and then yeild on it's `"unlocked"` signal. Then, we can use `Sleep::notify(who: String)` to resume the correct function.
+Now ever time `Sleeper::wait(name: String)` is invoked, we can create a new istance of a `Lock`, store it into a hashmap, and then yeild on it's `"unlocked"` signal. Then, we can use `Sleep::notify(who: String)` to resume the correct function. Additionally, this technique would be portable to Godot 4.0 as it doesn't rely on `GDScriptFunctionState` objects directly. Porting this woud be as simple as replacing `yield` with the new `await` syntax.
 
