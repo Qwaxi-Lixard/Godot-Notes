@@ -1,6 +1,6 @@
 # Godot Notes
 
-An unorganized rambling of things I've had to do with Godot. Any code here is CC-0.
+An unorganized rambling of things I've had to do with Godot. Any code here is MIT.
 
 ## Coroutine Locks
 Godot implements `Mutexes` for coordinating threads. However, they're not sutable for the task of sleeping and waking up *coroutines*. Using either would simplying cause the main thread to hang. For example, lets say the following code is some utility class:
